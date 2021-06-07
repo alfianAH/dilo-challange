@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -46,13 +47,21 @@ namespace Obstacle
     
         [SerializeField] private int maxBox = 5;
 
+        private PlayerMovement playerMovement;
+        
         private readonly List<GameObject> obstaclePool = new List<GameObject>();
 
         private float respawnSeconds = 3.0f;
+        private float spawnDistanceLimit = 1.0f;
         private int generatedBox;
         
         #region MonoBehaviour Methods
-        
+
+        private void Awake()
+        {
+            playerMovement = PlayerMovement.Instance;
+        }
+
         private void Start()
         {
             // Generate random number of generated boxes
@@ -71,21 +80,36 @@ namespace Obstacle
         /// <returns>Returns random x, y in Vector3</returns>
         private Vector3 FindRandomPosition()
         {
-            // Get minimum X axis
-            float minX = leftBoundary.transform.position.x + leftBoundary.bounds.size.x;
-            // Get maximum X axis
-            float maxX = rightBoundary.transform.position.x - rightBoundary.bounds.size.x;
-            // Get random position at minimum and maximum X
-            float x = Random.Range(minX, maxX);
+            Vector3 result;
+            
+            while(true)
+            {
+                // Get minimum X axis
+                float minX = leftBoundary.transform.position.x + leftBoundary.bounds.size.x;
+                // Get maximum X axis
+                float maxX = rightBoundary.transform.position.x - rightBoundary.bounds.size.x;
+                // Get random position at minimum and maximum X
+                float x = Random.Range(minX, maxX);
 
-            // Get minimum Y axis
-            float minY = upBoundary.transform.position.y - upBoundary.bounds.size.y;
-            // Get maximum Y axis
-            float maxY = downBoundary.transform.position.y + downBoundary.bounds.size.y;
-            // Get random position at minimum and maximum Y
-            float y = Random.Range(minY, maxY);
+                // Get minimum Y axis
+                float minY = upBoundary.transform.position.y - upBoundary.bounds.size.y;
+                // Get maximum Y axis
+                float maxY = downBoundary.transform.position.y + downBoundary.bounds.size.y;
+                // Get random position at minimum and maximum Y
+                float y = Random.Range(minY, maxY);
+                
+                result = new Vector3(x, y);
+                
+                // Check distance between player and obstacle's position
+                float obstacleDistance = Vector3.Distance(playerMovement.transform.position, result);
+                // If it's greater than spawnDistanceLimit, then go out from loop
+                if (obstacleDistance > spawnDistanceLimit)
+                {
+                    break;
+                }
+            }
 
-            return new Vector3(x, y);
+            return result;
         }
         
         /// <summary>

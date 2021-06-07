@@ -1358,7 +1358,7 @@ MonoBehaviour:
   downBoundary: {fileID: 1650518863}
   rightBoundary: {fileID: 160076881}
   leftBoundary: {fileID: 241077797}
-  maxBox: 10
+  maxBox: 20
 --- !u!4 &1807304812
 Transform:
   m_ObjectHideFlags: 0
