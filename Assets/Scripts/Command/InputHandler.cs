@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
 using Player;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Command
 {
     public class InputHandler : MonoBehaviour
     {
+        [SerializeField] private Toggle moveWithKeyboardToggle;
+        
         private PlayerMovement playerMovement;
         private readonly Queue<Command> commands = new Queue<Command>();
 
@@ -18,14 +21,20 @@ namespace Command
 
         private void FixedUpdate()
         {
-            // Get input for move command
-            Command moveCommand = MovementInputHandler();
-            // If moveCommand is not null, ...
-            if (moveCommand != null)
+            // If move with keyboard toggle is on, ...
+            if(moveWithKeyboardToggle.isOn)
             {
-                // Execute moveCommand
-                commands.Enqueue(moveCommand);
-                moveCommand.Execute();
+                // Move with keyboard
+                // Get input for move command
+                Command moveWithKeyboardCommand = MovementWithKeyboardHandler();
+                ExecuteCommand(moveWithKeyboardCommand);
+            }
+            else
+            {
+                // Move with mouse
+                // Get input for move command
+                Command moveWithMouseCommand = MovementWithCursorHandler();
+                ExecuteCommand(moveWithMouseCommand);
             }
         }
 
@@ -34,14 +43,29 @@ namespace Command
         #region Player Movement
         
         /// <summary>
-        /// Handle input for player movement
+        /// Execute command
+        /// </summary>
+        /// <param name="executedCommand">Executed command</param>
+        private void ExecuteCommand(Command executedCommand)
+        {
+            // If command is not null, ...
+            if (executedCommand != null)
+            {
+                // Execute the command
+                commands.Enqueue(executedCommand);
+                executedCommand.Execute();
+            }
+        }
+        
+        /// <summary>
+        /// Handle keyboard input for player movement
         /// W    : Up
         /// A    : Left
         /// S    : Down
         /// D    : Right
         /// </summary>
         /// <returns>MoveCommand</returns>
-        private Command MovementInputHandler()
+        private Command MovementWithKeyboardHandler()
         {
             // Up movement
             if (Input.GetKey(KeyCode.W))
@@ -68,6 +92,23 @@ namespace Command
             }
             
             // Idle
+            return new MoveCommand(playerMovement, 0, 0);
+        }
+        
+        /// <summary>
+        /// Handle movement with mouse position
+        /// </summary>
+        /// <returns>MoveCommand according to mouse position</returns>
+        private Command MovementWithCursorHandler()
+        {
+            // If mouse is available, ...
+            if (Input.mousePresent)
+            {
+                float horizontal = Input.mousePosition.x;
+                float vertical = Input.mousePosition.y;
+                return new MoveCommand(playerMovement, horizontal, vertical);
+            }
+            
             return new MoveCommand(playerMovement, 0, 0);
         }
 
