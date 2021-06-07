@@ -38,6 +38,7 @@ namespace Player
         [SerializeField] private float speed = 5.0f;
 
         private Rigidbody2D playerRigidbody;
+        private Vector3 movement;
 
         #region MonoBehaviour Methods
 
@@ -59,11 +60,17 @@ namespace Player
         /// <summary>
         /// Handle player movement
         /// </summary>
-        /// <param name="horizontal">Horizontal axis</param>
-        /// <param name="vertical">Vertical axis</param>
+        /// <param name="horizontal">Horizontal axis value</param>
+        /// <param name="vertical">Vertical axis value</param>
         public void Move(float horizontal, float vertical)
         {
+            movement.Set(horizontal, vertical, 0);
             
+            // Normalized movement to get 0-1
+            movement = movement.normalized * (speed * Time.deltaTime);
+            
+            // Move to position
+            playerRigidbody.MovePosition(transform.position + movement);
         }
 
         #endregion
