@@ -48,11 +48,6 @@ namespace Player
             playerRigidbody = GetComponent<Rigidbody2D>();
         }
 
-        private void Update()
-        {
-            Debug.Log($"Velocity: {playerRigidbody.velocity}");
-        }
-
         #endregion
 
         #region Movement
