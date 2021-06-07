@@ -1,3 +1,4 @@
+using Obstacle;
 using UnityEngine;
 
 namespace Player
@@ -46,6 +47,16 @@ namespace Player
         {
             // Get component
             playerRigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Obstacle"))
+            {
+                other.gameObject.SetActive(false);
+                ScoreManager.Instance.AddScore(1);
+                StartCoroutine(ObstacleSpawner.Instance.RespawnObstacle());
+            }
         }
 
         #endregion
