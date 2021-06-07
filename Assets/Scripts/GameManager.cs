@@ -41,9 +41,28 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = false;
     }
-
+    
+    /// <summary>
+    /// Handle game over
+    /// </summary>
     public void GameOver()
     {
         isGameOver = true;
+    }
+    
+    /// <summary>
+    /// Pause the game
+    /// </summary>
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+    
+    /// <summary>
+    /// Resume the game
+    /// </summary>
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
     }
 }
