@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    [SerializeField] private GameObject gameOver;
+    
     private bool isGameOver;
 
     public bool IsGameOver => isGameOver;
@@ -48,6 +51,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
+        // Set high score
+        ScoreManager.Instance.SetHighScore();
+        gameOver.SetActive(true);
     }
     
     /// <summary>
