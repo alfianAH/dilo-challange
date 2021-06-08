@@ -44,8 +44,9 @@ namespace Obstacle
             downBoundary, 
             rightBoundary,
             leftBoundary;
-    
-        [SerializeField] private int maxBox = 5;
+        
+        [SerializeField] private int minObstacle = 5;
+        [SerializeField] private int maxObstacle = 10;
 
         private PlayerMovement playerMovement;
         
@@ -65,7 +66,7 @@ namespace Obstacle
         private void Start()
         {
             // Generate random number of generated boxes
-            generatedBox = Random.Range(1, maxBox);
+            generatedBox = Random.Range(minObstacle, maxObstacle);
             
             GenerateInitBoxes();
         }

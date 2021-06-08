@@ -2100,7 +2100,7 @@ GameObject:
   - component: {fileID: 1807304812}
   - component: {fileID: 1807304811}
   m_Layer: 0
-  m_Name: Boxes
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2123,7 +2123,8 @@ MonoBehaviour:
   downBoundary: {fileID: 1650518863}
   rightBoundary: {fileID: 160076881}
   leftBoundary: {fileID: 241077797}
-  maxBox: 20
+  minObstacle: 10
+  maxObstacle: 20
 --- !u!4 &1807304812
 Transform:
   m_ObjectHideFlags: 0

@@ -60,13 +60,19 @@ namespace Player
             // If there is high score key in player prefs, ...
             if (PlayerPrefs.HasKey(HIGH_SCORE))
             {
+                int previousHighScore = PlayerPrefs.GetInt(HIGH_SCORE);
+                
                 // If current score is greater than high score, ...
-                if (score > PlayerPrefs.GetInt(HIGH_SCORE))
+                if (score > previousHighScore)
                 {
-                    Debug.Log("Break record");
                     // Set new high score
                     highScore = score;
                     PlayerPrefs.SetInt(HIGH_SCORE, highScore);
+                }
+                else // Else, ...
+                {
+                    // Keep the highScore the same as previousHighScore
+                    highScore = previousHighScore;
                 }
             }
             else // If there is no key, ...
