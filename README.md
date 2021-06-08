@@ -2,6 +2,27 @@
 
 This repository is for challenge in DILo Game Academy in Game Programmer Path.
 
+Project Features
+1. Singleton
+1. Don't Destroy On Load
+1. Audio
+1. Grid Layout
+1. Player Preferences
+1. Score
+1. Timer
+
+## Getting Started
+1. Clone this repository to your computer/laptop
+1. Open it with Unity (Recommended Unity 2020.3.9f1)
+1. Play with it.
+
+## How to Install
+1. Go to [Release tab](https://github.com/alfianAH/dilo-challange/releases)
+2. Choose between Eat_eAt_eaT_x64.exe or Eat_eAt_eaT_x86.exe. Choose the one that suits your computer/laptop. **Make sure it is the latest version.**
+3. It will automatically download the file to your computer.
+4. After downloading, double click the .exe file, it will launch the game. (Because this is the portable version).
+5. Done. You can play it now.
+
 ## Challenges
 
 ### Challenge 1
@@ -57,3 +78,11 @@ Develop the result into a game.
 ### Challenge 10
 
 Create one build containing a selection menu to access all builds.
+
+## Example Scene
+
+![gameplay1](images/gameplay1.PNG)
+
+![gameplay2](images/gameplay2.PNG)
+
+![gameplay3](images/gameplay3.PNG)
