@@ -525,7 +525,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 231724621}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 34e2cd6927975de4681f9fef93de5dbd, type: 2}
+  m_Material: {fileID: 6200000, guid: f00e12852031fe245b56cff934afbe63, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1041,6 +1041,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688958892}
   m_CullTransparentMesh: 1
+--- !u!1001 &858984749
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708409690837100428, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: m_Name
+      value: Game Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
 --- !u!1 &1650518860
 GameObject:
   m_ObjectHideFlags: 0
