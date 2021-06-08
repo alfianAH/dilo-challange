@@ -60,6 +60,15 @@ public class GameManager : MonoBehaviour
     }
     
     /// <summary>
+    /// Back to home
+    /// </summary>
+    public void BackToHome()
+    {
+        AudioManager.Instance.Play(ListSound.ButtonClick);
+        SceneLoadTrigger.Instance.LoadScene("HomeScene");
+    }
+
+    /// <summary>
     /// Pause the game
     /// </summary>
     public void PauseGame()
@@ -85,5 +94,13 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.Instance.Play(ListSound.ButtonClick);
         Time.timeScale = 1f;
+    }
+
+    /// <summary>
+    /// Exit the game
+    /// </summary>
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

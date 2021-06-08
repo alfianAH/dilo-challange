@@ -32,7 +32,7 @@ namespace SceneLoading
             
             while (!loadScene.isDone)
             {
-                loadingValueText.text = $"{loadScene.progress:00}";
+                loadingValueText.text = $"{loadScene.progress * 100:00}%";
                 yield return null;
             }
         }
