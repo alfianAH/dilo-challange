@@ -35,11 +35,33 @@ namespace Audio
         } 
 
         #endregion
+
+        #region Don't Destroy On Load
+        
+        /// <summary>
+        /// Use only 1 Audio Manager from HomeScene
+        /// </summary>
+        private void SetInstance()
+        {
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+        }
+
+        #endregion
         
         public Sound[] sounds;
 
         private void Awake()
         {
+            SetInstance();
+            
             foreach (Sound sound in sounds)
             {
                 sound.source = gameObject.AddComponent<AudioSource>();

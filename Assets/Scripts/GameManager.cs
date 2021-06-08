@@ -50,6 +50,14 @@ public class GameManager : MonoBehaviour
     }
     
     /// <summary>
+    /// Button click audio
+    /// </summary>
+    public void ButtonClick()
+    {
+        AudioManager.Instance.Play(ListSound.ButtonClick);
+    }
+    
+    /// <summary>
     /// Handle game over
     /// </summary>
     public void GameOver()
@@ -65,7 +73,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void BackToHome()
     {
-        AudioManager.Instance.Play(ListSound.ButtonClick);
+        ButtonClick();
         SceneLoadTrigger.Instance.LoadScene("HomeScene");
     }
 
@@ -74,8 +82,18 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PauseGame()
     {
-        AudioManager.Instance.Play(ListSound.ButtonClick);
+        ButtonClick();
         Time.timeScale = 0f;
+    }
+    
+    /// <summary>
+    /// Button click
+    /// </summary>
+    /// <param name="sceneName">Name of the scene</param>
+    public void PlayGame(string sceneName)
+    {
+        ButtonClick();
+        SceneLoadTrigger.Instance.LoadScene(sceneName);
     }
     
     /// <summary>
@@ -83,7 +101,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void RestartGame()
     {
-        AudioManager.Instance.Play(ListSound.ButtonClick);
+        ButtonClick();
         // Load current scene
         SceneLoadTrigger.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -93,7 +111,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ResumeGame()
     {
-        AudioManager.Instance.Play(ListSound.ButtonClick);
+        ButtonClick();
         Time.timeScale = 1f;
     }
 
@@ -102,6 +120,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ExitGame()
     {
+        ButtonClick();
         Application.Quit();
     }
 }
