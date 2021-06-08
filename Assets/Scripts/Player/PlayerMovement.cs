@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using Obstacle;
 using UnityEngine;
@@ -48,6 +49,18 @@ namespace Player
         {
             // Get component
             playerRigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            // If player collide with boundary, ...
+            if (other.gameObject.CompareTag("Boundary"))
+            {
+                AudioManager.Instance.Play(ListSound.Warning); // Play warning
+                PlayerHealth.Instance.playerLives -= 1; // Minus the live
+                PlayerHealthView.Instance.UpdatePlayerLives(PlayerHealth.Instance.playerLives); // Update the lives
+                PlayerHealth.Instance.CheckLives(); // Check for live
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)

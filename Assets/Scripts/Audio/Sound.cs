@@ -6,7 +6,9 @@ namespace Audio
     public enum ListSound
     {
         ButtonClick,
-        PointObtained
+        Die,
+        PointObtained,
+        Warning
     }
     
     [Serializable]
