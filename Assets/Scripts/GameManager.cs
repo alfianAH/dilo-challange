@@ -1,5 +1,7 @@
 using Player;
+using SceneLoading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,6 +64,15 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
+    }
+    
+    /// <summary>
+    /// Restart game
+    /// </summary>
+    public void RestartGame()
+    {
+        // Load current scene
+        SceneLoadTrigger.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     /// <summary>
