@@ -11,8 +11,13 @@ namespace Player
 
         private void Update()
         {
-            score.text = gameOverScore.text = $"Score: {ScoreManager.Instance.Score.ToString()}";
-            highScore.text = $"High Score: {ScoreManager.Instance.HighScore.ToString()}";
+            score.text = $"Score: {ScoreManager.Instance.Score.ToString()}";
+            
+            if(gameOverScore != null || highScore != null)
+            {
+                gameOverScore.text = $"Score: {ScoreManager.Instance.Score.ToString()}";
+                highScore.text = $"High Score: {ScoreManager.Instance.HighScore.ToString()}";
+            }
         }
     }
 }
