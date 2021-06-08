@@ -1,3 +1,4 @@
+using Audio;
 using Obstacle;
 using UnityEngine;
 
@@ -54,6 +55,7 @@ namespace Player
             if (other.CompareTag("Obstacle"))
             {
                 other.gameObject.SetActive(false);
+                AudioManager.Instance.Play(ListSound.PointObtained);
                 ScoreManager.Instance.AddScore(1);
                 StartCoroutine(ObstacleSpawner.Instance.RespawnObstacle());
             }

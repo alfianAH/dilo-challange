@@ -1,3 +1,4 @@
+using Audio;
 using Player;
 using SceneLoading;
 using UnityEngine;
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PauseGame()
     {
+        AudioManager.Instance.Play(ListSound.ButtonClick);
         Time.timeScale = 0f;
     }
     
@@ -71,6 +73,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void RestartGame()
     {
+        AudioManager.Instance.Play(ListSound.ButtonClick);
         // Load current scene
         SceneLoadTrigger.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -80,6 +83,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ResumeGame()
     {
+        AudioManager.Instance.Play(ListSound.ButtonClick);
         Time.timeScale = 1f;
     }
 }
