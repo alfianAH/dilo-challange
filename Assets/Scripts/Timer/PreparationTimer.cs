@@ -43,7 +43,7 @@ namespace Timer
         
         #endregion
 
-        #region PRIVATE_METHODS
+        #region User Interface
         
         /// <summary>
         /// Update timer text in UI

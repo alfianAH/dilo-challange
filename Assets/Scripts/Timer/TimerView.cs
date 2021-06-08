@@ -75,6 +75,8 @@ namespace Timer
 
         #endregion
 
+        #region User Interface
+        
         /// <summary>
         /// Update timer text in UI
         /// </summary>
@@ -84,5 +86,7 @@ namespace Timer
                 ? $"{timerModel.Seconds + timerModel.Milliseconds:F}" 
                 : $"{timerModel.Minutes:00} : {timerModel.Seconds:00}";
         }
+        
+        #endregion
     }
 }
