@@ -3539,6 +3539,10 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 2100393781}
+    - target: {fileID: 3708409690837100426, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
+      propertyPath: startTheGame
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3708409690837100427, guid: 138f90454c4b19b43b46d4ed52e0f761, type: 3}
       propertyPath: m_RootOrder
       value: 1

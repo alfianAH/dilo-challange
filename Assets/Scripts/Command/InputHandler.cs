@@ -21,7 +21,7 @@ namespace Command
 
         private void FixedUpdate()
         {
-            if (GameManager.Instance.IsGameOver) return;
+            if (GameManager.Instance.IsGameOver || !GameManager.Instance.startTheGame) return;
             
             // If move with keyboard toggle is on, ...
             if(moveWithKeyboardToggle.isOn)

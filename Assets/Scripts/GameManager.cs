@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    public bool startTheGame;
     [SerializeField] private GameObject gameOver;
     
     private bool isGameOver;

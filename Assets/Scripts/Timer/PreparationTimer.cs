@@ -37,6 +37,7 @@ namespace Timer
             {
                 isCountingDown = false;
                 TimerView.Instance.IsCountingDown = true;
+                GameManager.Instance.startTheGame = true;
                 gameObject.SetActive(false);
             }, UpdateTimerText);
         }
