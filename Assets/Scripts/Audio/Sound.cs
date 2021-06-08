@@ -6,6 +6,7 @@ namespace Audio
     public enum ListSound
     {
         ButtonClick,
+        CountDown,
         Die,
         PointObtained,
         Warning

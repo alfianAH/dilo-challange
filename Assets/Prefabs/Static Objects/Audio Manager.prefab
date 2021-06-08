@@ -51,19 +51,25 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - listSound: 2
-    clip: {fileID: 8300000, guid: 6484aad53b2cb0c4aad2e8248adf1683, type: 3}
+  - listSound: 1
+    clip: {fileID: 8300000, guid: f7a7eff6cc09e2441802bb4d70d42c83, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - listSound: 1
+  - listSound: 2
     clip: {fileID: 8300000, guid: 83a061f27f7565943b012874831773e1, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - listSound: 3
+    clip: {fileID: 8300000, guid: 6484aad53b2cb0c4aad2e8248adf1683, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - listSound: 4
     clip: {fileID: 8300000, guid: 585d878bb4942184b9edfe73146da5f4, type: 3}
     volume: 1
     pitch: 1

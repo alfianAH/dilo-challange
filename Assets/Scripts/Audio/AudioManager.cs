@@ -43,6 +43,7 @@ namespace Audio
             foreach (Sound sound in sounds)
             {
                 sound.source = gameObject.AddComponent<AudioSource>();
+                sound.source.playOnAwake = false;
                 sound.source.clip = sound.clip;
 
                 sound.source.volume = sound.volume;
