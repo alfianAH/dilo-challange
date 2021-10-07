@@ -3,39 +3,8 @@ using UnityEngine.UI;
 
 namespace Player
 {
-    public class PlayerHealthView : MonoBehaviour
+    public class PlayerHealthView : SingletonBaseClass<PlayerHealthView>
     {
-        #region Singleton
-
-        private static PlayerHealthView instance;
-        private const string LOG = nameof(PlayerHealthView);
-        
-        /// <summary>
-        /// Singleton method
-        /// </summary>
-        public static PlayerHealthView Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    // Find instance
-                    instance = FindObjectOfType<PlayerHealthView>();
-                    
-                    // If instance is not found, ...
-                    if (instance == null)
-                    {
-                        // Give log error
-                        Debug.LogError($"{LOG} not found");
-                    }
-                }
-
-                return instance;
-            }
-        } 
-
-        #endregion
-        
         [SerializeField] private Sprite emptyLive;
         [SerializeField] private Image[] playerLivesImage;
         
