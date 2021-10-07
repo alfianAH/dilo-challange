@@ -43,7 +43,7 @@ public class GameManager : SingletonBaseClass<GameManager>
     public void BackToHome()
     {
         ButtonClick();
-        SceneLoadTrigger.Instance.LoadScene("HomeScene");
+        SceneLoadTrigger.Instance.LoadScene("SelectLevelScene");
     }
 
     /// <summary>
