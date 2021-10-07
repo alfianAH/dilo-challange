@@ -1,43 +1,11 @@
-using System;
 using Audio;
 using Obstacle;
 using UnityEngine;
 
 namespace Player
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : SingletonBaseClass<PlayerMovement>
     {
-        #region Singleton
-
-        private static PlayerMovement instance;
-        private const string LOG = nameof(PlayerMovement);
-        
-        /// <summary>
-        /// Singleton method
-        /// </summary>
-        public static PlayerMovement Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    // Find instance
-                    instance = FindObjectOfType<PlayerMovement>();
-                    
-                    // If instance is not found, ...
-                    if (instance == null)
-                    {
-                        // Give log error
-                        Debug.LogError($"{LOG} not found");
-                    }
-                }
-
-                return instance;
-            }
-        } 
-
-        #endregion
-
         [SerializeField] private float speed = 5.0f;
 
         private Rigidbody2D playerRigidbody;
