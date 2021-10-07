@@ -3,39 +3,8 @@ using UnityEngine.UI;
 
 namespace Timer
 {
-    public class TimerView : MonoBehaviour
+    public class TimerView : SingletonBaseClass<TimerView>
     {
-        #region Singleton
-
-        private static TimerView instance;
-        private const string LOG = nameof(TimerView);
-        
-        /// <summary>
-        /// Singleton method
-        /// </summary>
-        public static TimerView Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    // Find instance
-                    instance = FindObjectOfType<TimerView>();
-                    
-                    // If instance is not found, ...
-                    if (instance == null)
-                    {
-                        // Give log error
-                        Debug.LogError($"{LOG} not found");
-                    }
-                }
-
-                return instance;
-            }
-        } 
-
-        #endregion
-        
         [SerializeField] private Text timerText;
         
         [Range(0, 59)]

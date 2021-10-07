@@ -4,39 +4,8 @@ using SceneLoading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonBaseClass<GameManager>
 {
-    #region Singleton
-
-    private static GameManager instance;
-    private const string LOG = nameof(GameManager);
-        
-    /// <summary>
-    /// Singleton method
-    /// </summary>
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                // Find instance
-                instance = FindObjectOfType<GameManager>();
-                    
-                // If instance is not found, ...
-                if (instance == null)
-                {
-                    // Give log error
-                    Debug.LogError($"{LOG} not found");
-                }
-            }
-
-            return instance;
-        }
-    } 
-
-    #endregion
-
     public bool startTheGame;
     [SerializeField] private GameObject gameOver;
     
