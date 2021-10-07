@@ -11,6 +11,9 @@ namespace Player
         private Rigidbody2D playerRigidbody;
         private Vector3 movement;
 
+        private const string BOUNDARY_TAG = "Boundary";
+        private const string OBSTACLE_TAG = "Obstacle";
+
         #region MonoBehaviour Methods
 
         private void Start()
@@ -22,7 +25,7 @@ namespace Player
         private void OnCollisionEnter2D(Collision2D other)
         {
             // If player collide with boundary, ...
-            if (other.gameObject.CompareTag("Boundary"))
+            if (other.gameObject.CompareTag(BOUNDARY_TAG))
             {
                 AudioManager.Instance.Play(ListSound.Warning); // Play warning
                 PlayerHealth.Instance.playerLives -= 1; // Minus the live
@@ -33,7 +36,7 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Obstacle"))
+            if (other.CompareTag(OBSTACLE_TAG))
             {
                 other.gameObject.SetActive(false);
                 AudioManager.Instance.Play(ListSound.PointObtained);

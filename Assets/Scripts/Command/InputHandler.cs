@@ -69,32 +69,13 @@ namespace Command
         /// <returns>MoveCommand</returns>
         private Command MovementWithKeyboardHandler()
         {
-            // Up movement
-            if (Input.GetKey(KeyCode.W))
-            {
-                return new MoveCommand(playerMovement, 0, 1);
-            }
+            // Get horizontal input
+            float h = Input.GetAxisRaw("Horizontal");
+        
+            // Get vertical input
+            float v = Input.GetAxisRaw("Vertical");
             
-            // Left movement
-            if (Input.GetKey(KeyCode.A))
-            {
-                return new MoveCommand(playerMovement, -1, 0);
-            }
-            
-            // Down movement
-            if (Input.GetKey(KeyCode.S))
-            {
-                return new MoveCommand(playerMovement, 0, -1);
-            }
-            
-            // Right movement
-            if (Input.GetKey(KeyCode.D))
-            {
-                return new MoveCommand(playerMovement, 1, 0);
-            }
-            
-            // Idle
-            return new MoveCommand(playerMovement, 0, 0);
+            return new MoveCommand(playerMovement, h, v);
         }
         
         /// <summary>
