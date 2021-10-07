@@ -796,7 +796,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 910417754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
@@ -804,15 +804,13 @@ MonoBehaviour:
     m_Right: 30
     m_Top: 30
     m_Bottom: 30
-  m_ChildAlignment: 4
-  m_Spacing: 30
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 385, y: 120}
+  m_Spacing: {x: 30, y: 30}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!114 &910417757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1638,9 +1636,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelConfigs:
-  - name: Tutorial
-    sceneName: Tutorial Scene
-  - name: Normal
+  - name: Level 1
+    sceneName: Level 1
+  - name: Level 2
+    sceneName: Level 2
+  - name: Level 3
+    sceneName: Level 3
+  - name: Level 4
+    sceneName: Level 4
+  - name: Level 5
+    sceneName: Level 5
+  - name: Level 6
+    sceneName: Level 6
+  - name: Level 7
+    sceneName: Level 7
+  - name: Level 8
+    sceneName: Level 8
+  - name: Level 9
     sceneName: Level 9
   levelParent: {fileID: 910417755}
   levelHolderPrefab: {fileID: 3866729488369658891, guid: d400946dc68551b4593891434bac019f, type: 3}
