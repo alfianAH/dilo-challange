@@ -10,6 +10,7 @@ Project Features
 1. Player Preferences
 1. Score
 1. Timer
+1. Tutorial
 
 ## Getting Started
 1. Clone this repository to your computer/laptop
