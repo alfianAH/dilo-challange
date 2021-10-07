@@ -6,39 +6,8 @@ using Random = UnityEngine.Random;
 
 namespace Obstacle
 {
-    public class ObstacleSpawner : MonoBehaviour
+    public class ObstacleSpawner : SingletonBaseClass<ObstacleSpawner>
     {
-        #region Singleton
-
-        private static ObstacleSpawner instance;
-        private const string LOG = nameof(ObstacleSpawner);
-        
-        /// <summary>
-        /// Singleton method
-        /// </summary>
-        public static ObstacleSpawner Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    // Find instance
-                    instance = FindObjectOfType<ObstacleSpawner>();
-                    
-                    // If instance is not found, ...
-                    if (instance == null)
-                    {
-                        // Give log error
-                        Debug.LogError($"{LOG} not found");
-                    }
-                }
-
-                return instance;
-            }
-        } 
-
-        #endregion
-        
         [SerializeField] private SpriteRenderer obstaclePrefab;
         [SerializeField] private SpriteRenderer upBoundary, 
             downBoundary, 
