@@ -2,39 +2,8 @@ using UnityEngine;
 
 namespace Player
 {
-    public class ScoreManager : MonoBehaviour
+    public class ScoreManager : SingletonBaseClass<ScoreManager>
     {
-        #region Singleton
-
-        private static ScoreManager instance;
-        private const string LOG = nameof(ScoreManager);
-        
-        /// <summary>
-        /// Singleton method
-        /// </summary>
-        public static ScoreManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    // Find instance
-                    instance = FindObjectOfType<ScoreManager>();
-                    
-                    // If instance is not found, ...
-                    if (instance == null)
-                    {
-                        // Give log error
-                        Debug.LogError($"{LOG} not found");
-                    }
-                }
-
-                return instance;
-            }
-        } 
-
-        #endregion
-
         private const string HIGH_SCORE = "high_score";
         
         private int score;
