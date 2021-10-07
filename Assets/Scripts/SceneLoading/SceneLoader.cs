@@ -9,7 +9,7 @@ namespace SceneLoading
     {
         [SerializeField] private Text loadingValueText;
         
-        private const float WAIT_SECONDS = 3.0f;
+        private const float WAIT_SECONDS = 2.0f;
         
         private void Start()
         {
